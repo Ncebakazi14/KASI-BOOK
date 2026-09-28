@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KasiBook — Business Dashboard for Small Business Owners</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="wordmark">KASI<span>Book</span></a>
+    <nav class="header-nav">
+      <a href="index.html">Customer site</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Login / register gate -->
+<div class="auth-wrap" id="authWrap">
+  <div class="auth-card">
+    <h1 id="authTitle">Business login</h1>
+    <div class="sub" id="authSub">No more WhatsApp bookings or notebooks — see your bookings, cancellations, services and customers in one place.</div>
+
+    <div class="auth-tabs">
+      <button data-mode="login" class="active" id="tabLogin">Log in</button>
+      <button data-mode="register" id="tabRegister">Register business</button>
+    </div>
+
+    <!-- Login form -->
+    <div id="loginForm">
+      <label class="field-label" style="margin-top:0;" for="loginBiz">Your business</label>
+      <select class="field-select" id="loginBiz"></select>
+
+      <label class="field-label" for="loginPass">Password</label>
+      <input class="field-input" id="loginPass" type="password" placeholder="Enter password">
+
+      <div class="error-msg" id="loginError">Incorrect password. Try again.</div>
+
+      <button class="btn btn-orange btn-block" style="margin-top:20px;" id="loginBtn">Log in</button>
+
+      <div class="auth-hint">Demo mode — pick any business above and use the password <strong>kasi123</strong>.</div>
+    </div>
+
+    <!-- Register form -->
+    <div id="registerForm" style="display:none;">
+      <label class="field-label" style="margin-top:0;" for="regName">Business name</label>
+      <input class="field-input" id="regName" placeholder="e.g. Amanda's Beauty Bar">
+
+      <label class="field-label" for="regCategory">Category</label>
+      <input class="field-input" id="regCategory" placeholder="e.g. Barber, Beauty Therapist, Salon, Mechanic, Food Vendor">
+
+      <label class="field-label" for="regOwner">Owner name</label>
+      <input class="field-input" id="regOwner" placeholder="Your full name">
+
+      <label class="field-label" for="regLocation">Location</label>
+      <input class="field-input" id="regLocation" placeholder="e.g. NY1, Khayelitsha">
+
+      <label class="field-label" for="regPassword">Choose a password</label>
+      <input class="field-input" id="regPassword" type="password">
+
+      <div class="error-msg" id="registerError">Please fill in every field.</div>
+
+      <button class="btn btn-orange btn-block" style="margin-top:20px;" id="registerBtn">Create business account</button>
+    </div>
+  </div>
+</div>
+
+<!-- Dashboard shell (hidden until login) -->
+<div class="dash-shell" id="dashShell" style="display:none;">
+  <aside class="dash-side">
+    <div class="dash-biz-name" id="sideBizName">—</div>
+    <div class="dash-biz-cat" id="sideBizCat">—</div>
+    <nav class="dash-nav" id="dashNav">
+      <button data-view="bookings" class="active">Bookings</button>
+      <button data-view="services">Services</button>
+      <button data-view="customers">Customers</button>
+      <button data-view="profile">Business profile</button>
+    </nav>
+    <button class="btn btn-outline dash-logout" id="logoutBtn" style="color:var(--cream);border-color:var(--cream-dim);">Log out</button>
+  </aside>
+
+  <main class="dash-main" id="dashMain"></main>
+</div>
+
+<script src="data.js"></script>
+<script src="merchant.js"></script>
+</body>
+</html>

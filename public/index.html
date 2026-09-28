@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KasiBook — Booking Made Easy for Small Business Owners</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="wordmark">KASI<span>Book</span></a>
+    <nav class="header-nav">
+      <a href="dashboard.html">Business login</a>
+      <button class="btn btn-outline" id="topAuthBtn" style="color:var(--cream);border-color:var(--cream-dim);">Log in / Sign up</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ LOGGED-OUT LANDING ============ -->
+<div id="landingScreen">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">BUILT FOR SMALL BUSINESS OWNERS</div>
+        <h1>Stop booking on WhatsApp and notebooks.</h1>
+        <p>KasiBook gives every small business — barbers, salons, nail techs, beauty therapists, food vendors, mechanics and more — one simple place to take bookings, get paid and keep track of customers, instead of juggling chats and paper.</p>
+        <div class="hero-actions">
+          <button class="btn btn-orange" id="heroSignupBtn">Create free account</button>
+          <button class="btn btn-outline" id="heroLoginBtn">I have an account</button>
+        </div>
+      </div>
+      <div class="hero-board">
+        <div class="board-title">WHY CREATE AN ACCOUNT?</div>
+        <div class="board-row"><span>Track every booking</span><span>✓</span></div>
+        <div class="board-row"><span>Pay securely in-app</span><span>✓</span></div>
+        <div class="board-row"><span>Instant confirmation</span><span>✓</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="container section">
+      <div class="strip-grid">
+        <div class="strip-item">
+          <div class="num">✗</div>
+          <h3>No more WhatsApp back-and-forth</h3>
+          <p>No more "is 2pm still open?" messages piling up. Customers see real availability and book it themselves.</p>
+        </div>
+        <div class="strip-item">
+          <div class="num">✓</div>
+          <h3>Pay, then relax</h3>
+          <p>Pay for your service when you book and get instant confirmation — no waiting on a reply.</p>
+        </div>
+        <div class="strip-item">
+          <div class="num">★</div>
+          <h3>Made for small business owners</h3>
+          <p>Whatever service you offer — barbering, beauty, food or repairs — add photos of your work, manage bookings and cancellations, and let customers discover you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>KasiBook · Empowering township entrepreneurs · 2026</span>
+      <span>Accounts and bookings are saved to the KasiBook database</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ LOGGED-IN CUSTOMER DASHBOARD ============ -->
+<div id="dashboardScreen" style="display:none;">
+  <div class="cust-topbar">
+    <div class="container">
+      <div class="cust-greeting">Hi, <span id="custGreetName"></span> 👋</div>
+      <button class="btn btn-outline" id="custLogoutBtn" style="color:var(--cream);border-color:var(--cream-dim);">Log out</button>
+    </div>
+  </div>
+
+  <div class="container section" style="padding-bottom:20px;">
+    <div class="pill-row" id="custTabRow">
+      <button class="pill active" data-tab="browse">Browse businesses</button>
+      <button class="pill" data-tab="bookings">My bookings</button>
+    </div>
+  </div>
+
+  <!-- Browse tab -->
+  <div class="container section" id="browseTab" style="padding-top:0;">
+    <div class="pill-row" id="categoryPills"></div>
+    <div class="biz-grid" id="bizGrid"></div>
+  </div>
+
+  <!-- My bookings tab -->
+  <div class="container section" id="bookingsTab" style="display:none;padding-top:0;">
+    <div id="bookingsList"></div>
+  </div>
+</div>
+
+<!-- Modal (auth / booking / payment / confirmation all render here) -->
+<div class="modal-backdrop" id="bizModal">
+  <div class="modal" id="bizModalContent"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="customer.js"></script>
+</body>
+</html>
