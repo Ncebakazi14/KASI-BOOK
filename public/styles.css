@@ -137,7 +137,7 @@ button {
   margin: 0 auto;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   align-items: center;
 }
@@ -168,29 +168,6 @@ button {
 }
 
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
-.hero-board {
-  background: var(--cream);
-  border: 4px solid var(--green-deep);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 22px;
-  transform: rotate(-1.4deg);
-}
-.hero-board .board-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px dashed var(--line);
-  font-weight: 600;
-}
-.hero-board .board-row:last-child { border-bottom: none; }
-.hero-board .board-title {
-  font-family: 'Alfa Slab One', serif;
-  font-size: 15px;
-  color: var(--green-deep);
-  margin-bottom: 6px;
-}
 
 /* ---------- Sections ---------- */
 .section {

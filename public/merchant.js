@@ -102,6 +102,7 @@ logoutBtn.addEventListener("click", () => {
   authWrap.style.display = "flex";
   dashShell.style.display = "none";
   loginPass.value = "";
+  populateLoginOptions();
 });
 
 dashNav.addEventListener("click", (e) => {
